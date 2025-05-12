@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Aura Élégance</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; background: #f8f7fc; color: #333; }
+        h1 { color: #5c4db3; }
+        .question { margin-bottom: 30px; }
+        button { margin-top: 20px; padding: 10px 20px; background-color: #5c4db3; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #493c90; }
+    </style>
+</head>
+<body>
+
+<h1>Quiz : Quelle aura naturelle dégage-tu ?</h1>
+<form id="quizForm">
+
+    <div class="question">
+        <p>1. Quel mot te décrit le mieux en société ?</p>
+        <label><input type="radio" name="q1" value="A"> Discret(e)</label><br>
+        <label><input type="radio" name="q1" value="B"> Dynamique</label><br>
+        <label><input type="radio" name="q1" value="C"> Attentif(ve)</label><br>
+        <label><input type="radio" name="q1" value="D"> Changeant(e) selon l’humeur</label>
+    </div>
+
+    <div class="question">
+        <p>2. Ton style vestimentaire naturel tend vers...</p>
+        <label><input type="radio" name="q2" value="A"> Elégance sobre, lignes nettes</label><br>
+        <label><input type="radio" name="q2" value="B"> Couleurs vives ou matières sensuelles</label><br>
+        <label><input type="radio" name="q2" value="C"> Confort doux, look naturel</label><br>
+        <label><input type="radio" name="q2" value="D"> Mélange imprévisible selon l’envie</label>
+    </div>
+
+    <div class="question">
+        <p>3. Ton regard est souvent perçu comme...</p>
+        <label><input type="radio" name="q3" value="A"> Intense, distant, contrôlé</label><br>
+        <label><input type="radio" name="q3" value="B"> Chaleureux, expressif</label><br>
+        <label><input type="radio" name="q3" value="C"> Observateur et calme</label><br>
+        <label><input type="radio" name="q3" value="D"> Variable, parfois rêveur, parfois perçant</label>
+    </div>
+
+    <div class="question">
+        <p>4. En séduction, tu es plutôt...</p>
+        <label><input type="radio" name="q4" value="A"> Suggestif(ve), mystérieux(se)</label><br>
+        <label><input type="radio" name="q4" value="B"> Spontané(e), tactile, joueur(se)</label><br>
+        <label><input type="radio" name="q4" value="C"> Gentil(le), attentif(ve), stable</label><br>
+        <label><input type="radio" name="q4" value="D"> Impulsif(ve), changeant(e)</label>
+    </div>
+
+    <div class="question">
+        <p>5. Tes émotions sont généralement...</p>
+        <label><input type="radio" name="q5" value="A"> Intériorisées, maîtrisées</label><br>
+        <label><input type="radio" name="q5" value="B"> Ouvertes, visibles, spontanées</label><br>
+        <label><input type="radio" name="q5" value="C"> Calmes, contenues mais présentes</label><br>
+        <label><input type="radio" name="q5" value="D"> Fluctuantes, parfois intenses, parfois absentes</label>
+    </div>
+
+    
+    <div class="question">
+        <p>6. Quelle est ta première réaction dans une situation inconnue ?</p>
+        <label><input type="radio" name="q6" value="A"> Tu observes et restes prudent(e)</label><br>
+        <label><input type="radio" name="q6" value="B"> Tu engages la discussion sans hésiter</label><br>
+        <label><input type="radio" name="q6" value="C"> Tu écoutes avant d’intervenir</label><br>
+        <label><input type="radio" name="q6" value="D"> Ça dépend totalement de ton humeur</label>
+    </div>
+
+    <div class="question">
+        <p>7. Quelle qualité ressort souvent quand on parle de toi ?</p>
+        <label><input type="radio" name="q7" value="A"> Élégance ou sérieux</label><br>
+        <label><input type="radio" name="q7" value="B"> Chaleur ou enthousiasme</label><br>
+        <label><input type="radio" name="q7" value="C"> Calme ou stabilité</label><br>
+        <label><input type="radio" name="q7" value="D"> Mystère ou imprévisibilité</label>
+    </div>
+
+    <div class="question">
+        <p>8. Quelle posture corporelle adoptes-tu naturellement ?</p>
+        <label><input type="radio" name="q8" value="A"> Droite, contrôlée</label><br>
+        <label><input type="radio" name="q8" value="B"> Détendue, expressive</label><br>
+        <label><input type="radio" name="q8" value="C"> Souple, posée</label><br>
+        <label><input type="radio" name="q8" value="D"> Changeante, en mouvement</label>
+    </div>
+
+    <div class="question">
+        <p>9. Quand tu es avec des inconnus, tu es plutôt...</p>
+        <label><input type="radio" name="q9" value="A"> Distant(e), observateur(trice)</label><br>
+        <label><input type="radio" name="q9" value="B"> Accueillant(e), engageant(e)</label><br>
+        <label><input type="radio" name="q9" value="C"> Discret(e), mais disponible</label><br>
+        <label><input type="radio" name="q9" value="D"> Variable, selon le feeling</label>
+    </div>
+
+    <div class="question">
+        <p>10. Quelle ambiance te correspond le mieux ?</p>
+        <label><input type="radio" name="q10" value="A"> Silence, espaces épurés</label><br>
+        <label><input type="radio" name="q10" value="B"> Chaleur, convivialité</label><br>
+        <label><input type="radio" name="q10" value="C"> Douceur, naturel</label><br>
+        <label><input type="radio" name="q10" value="D"> Éclectisme, surprises</label>
+    </div>
+<button type="button" onclick="calculateAura()">Voir mon aura</button>
+</form>
+
+<script>
+function calculateAura() {
+    let counts = { A: 0, B: 0, C: 0, D: 0 };
+    for (let i = 1; i <= 10; i++) {
+        let selected = document.querySelector('input[name="q' + i + '"]:checked');
+        if (!selected) {
+            alert("Merci de répondre à toutes les questions.");
+            return;
+        }
+        counts[selected.value]++;
+    }
+
+    let max = Math.max(counts.A, counts.B, counts.C, counts.D);
+    let dominant = Object.keys(counts).find(key => counts[key] === max);
+
+    let resultURL = {
+        A: "resultat_froide.html",
+        B: "resultat_chaude.html",
+        C: "resultat_mixte.html",
+        D: "resultat_indefinie.html"
+    }[dominant];
+
+    window.location.href = resultURL;
+}
+</script>
+
+</body>
+</html>
